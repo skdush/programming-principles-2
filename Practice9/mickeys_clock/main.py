@@ -2,11 +2,9 @@ import pygame
 import sys
 from clock import MickeysClock
 
-# Настройки окна
 WIDTH, HEIGHT = 600, 650
 FPS = 60
 BG_COLOR = (240, 240, 255)
-
 TITLE_COLOR = (30, 30, 100)
 
 
@@ -16,7 +14,6 @@ def main():
     pygame.display.set_caption("Mickey's Clock")
     clock_tick = pygame.time.Clock()
 
-    # Создаём объект часов
     clock = MickeysClock(screen, WIDTH, HEIGHT - 60)
 
     while True:
@@ -29,15 +26,12 @@ def main():
                     pygame.quit()
                     sys.exit()
 
-        # Фон
         screen.fill(BG_COLOR)
 
-        # Заголовок
         font = pygame.font.SysFont("Arial", 26, bold=True)
         title = font.render("Mickey's Clock - Minutes & Seconds", True, TITLE_COLOR)
         screen.blit(title, (WIDTH // 2 - title.get_width() // 2, 10))
 
-        # Рисуем часы
         clock.draw()
 
         pygame.display.flip()
