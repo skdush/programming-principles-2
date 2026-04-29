@@ -163,6 +163,12 @@ def main():
 
             if event.type == pygame.KEYDOWN:
                 mods = pygame.key.get_mods()
+                if event.key == pygame.K_1 and not text_active:
+                    size_idx = 0
+                elif event.key == pygame.K_2 and not text_active:
+                    size_idx = 1
+                elif event.key == pygame.K_3 and not text_active:
+                    size_idx = 2
                 if mods & pygame.KMOD_CTRL and event.key == pygame.K_s:
                     ts    = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
                     fname = f"canvas_{ts}.png"
