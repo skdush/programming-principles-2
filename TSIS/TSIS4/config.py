@@ -1,7 +1,7 @@
 import json
 import os
 
-SETTINGS_FILE = 'settings.json'
+SETTINGS_FILE = os.path.join(os.path.dirname(__file__), 'settings.json')
 
 DEFAULT_SETTINGS = {
     "snake_color": (0, 255, 0),
